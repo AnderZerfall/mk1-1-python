@@ -5,6 +5,7 @@ def main():
     print('Test manager init')
     manager = FileManager();
     lines = manager.read_file('text.txt')
-    print(manager.filter_lines(lines, 'boo'))
+    filtered_lines = manager.filter_lines(lines, 'boo')
+    manager.save_file(filtered_lines, 'filtered.txt')
 
 main()

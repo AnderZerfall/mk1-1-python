@@ -12,7 +12,19 @@ class FileManager:
             print(f'Unexpected error: {error}');
             return
         
-        return lines;
+        return lines
+    
+    def save_file(self, source_lines, target_filepath):
+        try:
+            if (len(source_lines) == 0):
+                raise Exception(f'The source array is empty, so there is no point in saving something, lol');
+            
+            with open(target_filepath, "w", encoding="utf-8") as file:
+
+                for line in source_lines:
+                    file.write(line + "\n")
+        except Exception as error:
+            print(f'Unexpected error: {error}');
 
     def filter_lines(self, source_lines, target):
         try:
@@ -22,7 +34,8 @@ class FileManager:
         
             for line in lines:
                 if (target in line):
-                    result.append(line)
+                    clean_line = line.replace("\n", "")
+                    result.append(clean_line)
         
             if (len(result) == 0):
                 raise Exception(f'No lines with the "{target}" was found');
