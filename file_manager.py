@@ -22,8 +22,7 @@ class FileManager:
         try:
             if (len(source_lines) == 0):
                 raise
-            Exception(
-                'The source array is empty, so there is no point in saving something, lol')     
+            Exception('The source array is empty')
 
             with open(target_filepath, "w", encoding="utf-8") as file:
 
