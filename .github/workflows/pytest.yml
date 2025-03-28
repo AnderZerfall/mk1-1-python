@@ -1,4 +1,4 @@
-name: Run Test
+name: Run Test and Flake8
 
 on:
   push:
@@ -25,6 +25,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Run Flake8
+        run: flake8 .
 
       - name: Run test
         run: pytest --html=report.html
