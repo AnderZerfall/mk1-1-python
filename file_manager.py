@@ -8,6 +8,8 @@ class FileManager:
         try:
             with open(filepath, 'r', encoding="utf-8") as file:
                 lines = file.readlines()
+                
+            print(f'File has been successfully read from [{filepath}]')
         except Exception as error:
             print(f'Unexpected error: {error}');
             return
@@ -23,8 +25,11 @@ class FileManager:
 
                 for line in source_lines:
                     file.write(line + "\n")
+
+            print(f'File has been successfully written in [{target_filepath}]')
         except Exception as error:
             print(f'Unexpected error: {error}');
+        
 
     def filter_lines(self, source_lines, target):
         try:
@@ -39,6 +44,8 @@ class FileManager:
         
             if (len(result) == 0):
                 raise Exception(f'No lines with the "{target}" was found');
+            
+            print(f'Lines has been successfully filtered [{result}]')
         except Exception as error:
             print(f'Unexpected error: {error}');
             return;
