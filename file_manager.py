@@ -21,8 +21,8 @@ class FileManager:
     def save_file(self, source_lines, target_filepath):
         try:
             if (len(source_lines) == 0):
-                raise Exception(
-                    f'The source array is empty, so there is no point in saving something, lol')
+                raise
+            Exception('The source array is empty, so there is no point in saving something, lol')
 
             with open(target_filepath, "w", encoding="utf-8") as file:
 
