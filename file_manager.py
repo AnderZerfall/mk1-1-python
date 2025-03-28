@@ -7,7 +7,9 @@ class FileManager:
         
         try:
             with open(filepath, 'r', encoding="utf-8") as file:
-                lines = file.readlines()
+                for line in file:
+                    clean_line = line.replace("\n", "")
+                    lines.append(clean_line)
                 
             print(f'File has been successfully read from [{filepath}]')
         except Exception as error:
