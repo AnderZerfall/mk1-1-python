@@ -27,4 +27,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run test
-        run: pytest --cov=. --cov-report=xml --cov-report=html
+        run: pytest --html=report.html
